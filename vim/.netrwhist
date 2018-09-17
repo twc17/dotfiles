@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/twc17/Documents/learn-chef/cookbooks/lamp/.kitchen'
+let g:netrw_dirhist_2='/home/twc17/.vim'
+let g:netrw_dirhist_3='/home/twc17/Documents/Azure/azure-voting-app-redis/azure-vote'
+let g:netrw_dirhist_4='/home/twc17/.vim'

@@ -1,15 +1,30 @@
 " This must be first, because it changes other options as side effect
 set nocompatible
 filetype off
-filetype plugin off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'severin-lemaignan/vim-minimap'
+
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'dracula/vim'
+" Plugin 'srcery-colors/srcery-vim'
+" Plugin 'aradunovic/perun.vim'
+
+" All plugins must be ABOVE this line
+call vundle#end()
 
 filetype plugin indent on
 set hidden
 
 set t_Co=256
 set background=dark
-set shortmess=atI
+" set shortmess=atI
 
+colorscheme dracula
 syntax on
 syntax sync fromstart
 
@@ -109,3 +124,12 @@ nnoremap zZ zR
 
 " Yank to system clipboard
 map <Leader>y "+y"
+
+" Start NERDTree on vim startup
+autocmd vimenter * NERDTree
+
+" Close VIM if NERDtree is the only window left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Ctrl + n to toggle NERDTree view
+map <C-n> :NERDTreeToggle<CR>
